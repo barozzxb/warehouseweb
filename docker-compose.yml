@@ -1,0 +1,28 @@
+services:
+  mysql:
+    image: mysql:8.0
+    container_name: ware_house_mysql
+    restart: always
+    environment:
+      MYSQL_DATABASE: ware_house_db
+      MYSQL_ROOT_PASSWORD: root
+      LANG: C.UTF-8
+    ports:
+      - "3301:3306"
+    volumes:
+      - mysql-data:/var/lib/mysql
+    networks:
+      - ware_house-service
+    command: --character-set-server=utf8mb4 --collation-server=utf8mb4_unicode_ci
+    healthcheck:
+      test: ["CMD", "mysqladmin", "ping", "-h", "localhost"]
+      interval: 10s
+      timeout: 5s
+      retries: 3
+
+networks:
+  ware_house-service:
+    driver: bridge
+
+volumes:
+  mysql-data:

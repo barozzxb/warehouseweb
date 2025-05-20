@@ -1,0 +1,30 @@
+server:
+  port: 8020
+
+spring:
+  application:
+    name: ware_house
+  datasource:
+    url: jdbc:mysql://localhost:3301/ware_house_db?serverTimezone=Asia/Ho_Chi_Minh
+    username: root
+    password: root
+  jpa:
+    hibernate:
+      ddl-auto: update
+    show-sql: true
+    properties:
+      hibernate:
+        format_sql: true
+
+springdoc:
+  api-docs:
+    enabled: true
+  swagger-ui:
+    enabled: true
+
+openapi:
+  service:
+    api-docs: ware_house
+    server: http://localhost:${server.port}
+    title: chatbot_spring service
+    version: 1.0.0
