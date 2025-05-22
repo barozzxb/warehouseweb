@@ -41,6 +41,6 @@ public class Supplier {
     @ManyToOne(fetch = FetchType.LAZY)
     @JoinColumn(name = "warehouse_id", referencedColumnName = "id")
     @JsonBackReference
-    private WareHouse wareHouse;
+    private Warehouse warehouse;
 
 }

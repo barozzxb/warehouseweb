@@ -8,13 +8,13 @@ import java.util.ArrayList;
 import java.util.List;
 
 @Entity
-@Table(name = "tbl_ware_house")
+@Table(name = "tbl_warehouse")
 @Getter
 @Setter
 @Builder
 @NoArgsConstructor
 @AllArgsConstructor
-public class WareHouse {
+public class Warehouse {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
@@ -25,12 +25,12 @@ public class WareHouse {
     @Column(name = "location")
     private String location;
 
-    @OneToMany(mappedBy = "wareHouse")
+    @OneToMany(mappedBy = "warehouse")
     @Builder.Default
     @JsonManagedReference
     private List<Supplier> suppliers = new ArrayList<>();
 
-    @OneToMany(mappedBy = "wareHouse")
+    @OneToMany(mappedBy = "warehouse")
     @Builder.Default
     @JsonManagedReference
     private List<Inventory> inventory = new ArrayList<>();

@@ -5,7 +5,7 @@ spring:
   application:
     name: ware_house
   datasource:
-    url: jdbc:mysql://localhost:3301/ware_house_db?serverTimezone=Asia/Ho_Chi_Minh
+    url: jdbc:mysql://localhost:3301/warehouse_db?serverTimezone=Asia/Ho_Chi_Minh
     username: root
     password: root
   jpa:
