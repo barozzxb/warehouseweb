@@ -3,6 +3,7 @@ package vn.warehouse.model;
 import com.fasterxml.jackson.annotation.JsonBackReference;
 import jakarta.persistence.*;
 import lombok.*;
+import vn.warehouse.model.enumuration.TransactionType;
 
 import java.time.LocalDateTime;
 
@@ -22,7 +23,8 @@ public class Transaction {
     private Integer quantity;
 
     @Column(name = "type", nullable = false)
-    private String type;
+    @Enumerated(EnumType.STRING)
+    private TransactionType type;
 
     @Column(name = "status", nullable = false)
     private String status;

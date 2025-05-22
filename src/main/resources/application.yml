@@ -10,7 +10,7 @@ spring:
     password: root
   jpa:
     hibernate:
-      ddl-auto: update
+      ddl-auto: none
     show-sql: true
     properties:
       hibernate:
@@ -28,3 +28,8 @@ openapi:
     server: http://localhost:${server.port}
     title: chatbot_spring service
     version: 1.0.0
+
+jwt:
+  accessToken:
+    secretKey: bNg5ITJ8MjZGOlrQPLTOikaJI1WZqnhwrI3eypbGjyQ=
+    expiry: 1800000 # 30p
