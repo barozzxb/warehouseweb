@@ -11,6 +11,7 @@ services:
       - "3301:3306"
     volumes:
       - mysql-data:/var/lib/mysql
+      - ./initdb.sql:/docker-entrypoint-initdb.d/init.sql
     networks:
       - warehouse-service
     command: --character-set-server=utf8mb4 --collation-server=utf8mb4_unicode_ci

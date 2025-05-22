@@ -5,6 +5,7 @@ import jakarta.persistence.*;
 import lombok.*;
 import org.springframework.security.core.GrantedAuthority;
 import org.springframework.security.core.userdetails.UserDetails;
+import vn.warehouse.model.enumuration.Role;
 
 import java.util.ArrayList;
 import java.util.Collection;
@@ -35,7 +36,9 @@ public class User implements UserDetails {
     private String phone;
 
     @Column(name = "role")
-    private String role;
+    @Enumerated(EnumType.STRING)
+    @Builder.Default
+    private Role role = Role.STAFF;
 
     @OneToMany(mappedBy = "employee")
     @Builder.Default
