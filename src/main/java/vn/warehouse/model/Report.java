@@ -23,7 +23,6 @@ public class Report {
     @Column(name = "generated_date", nullable = false)
     private LocalDateTime generatedDate;
 
-    @Lob
-    @Column(name = "data")
-    private String data;
+    @Column(name = "data", columnDefinition = "LONGBLOB")
+    private byte[] data;
 }

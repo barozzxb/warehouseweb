@@ -9,9 +9,8 @@ import vn.warehouse.model.enumuration.TransactionType;
 @Setter
 @Builder
 public class TransactionStatisticsResponse {
-    private Long id; // ID của nhân viên hoặc khoảng thời gian (nếu nhóm theo thời gian)
-    private String name; // Tên nhân viên hoặc mô tả khoảng thời gian
-    private TransactionType type; // Loại giao dịch (nếu lọc theo loại)
-    private Long totalTransactions; // Tổng số giao dịch
-    private Integer totalQuantity; // Tổng số lượng sản phẩm giao dịch
+    private TransactionType type;
+    private String status;
+    private Long totalTransactions;
+    private Long totalQuantity;
 }
