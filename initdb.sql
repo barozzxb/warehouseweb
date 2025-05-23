@@ -10,7 +10,7 @@ create table tbl_report
 (
     id             bigint auto_increment
         primary key,
-    data           tinytext     null,
+    data           longblob     null,
     generated_date datetime(6)  not null,
     report_type    varchar(255) not null
 );
